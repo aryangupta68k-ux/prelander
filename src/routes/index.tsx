@@ -57,13 +57,17 @@ function Index() {
       setTimeout(() => {
         window.location.href = urls.escapeUrl;
 
+        // On iOS: show instructions quickly (scheme is likely blocked)
+        // On Android: wait 1800ms (intent:// usually works)
+        const fallbackDelay = urls.isAndroid ? 1800 : 300;
         setTimeout(() => {
           if (!document.hidden) {
             const fb = document.getElementById("fallback-ui");
             if (fb) fb.style.display = "block";
-            btn.style.display = "none";
+            btn.innerText = "Continue to Browser";
+            btn.style.opacity = "1";
           }
-        }, 1800);
+        }, fallbackDelay);
       }, 100);
     };
 
@@ -252,8 +256,7 @@ function Index() {
             fontFamily: instagramFont,
           }}
         >
-          Action required: Tap ••• (top right) and select "Open in System
-          Browser".
+          Tap <strong>⋯</strong> or <strong>⋮</strong> at the top of this screen, then select <strong>"Open in Browser"</strong> or <strong>"Open in Safari"</strong>.
         </div>
       </div>
     </div>
