@@ -35,7 +35,7 @@ function buildUrls() {
   let escapeUrl = "";
   if (isAndroid) {
     const encodedFallback = encodeURIComponent(finalUrl);
-    escapeUrl = `intent://${urlWithoutProtocol}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodedFallback};end;`;
+    escapeUrl = `intent://${urlWithoutProtocol}#Intent;scheme=https;S.browser_fallback_url=${encodedFallback};end`;
   } else {
     escapeUrl = `x-safari-https://${urlWithoutProtocol}`;
   }
@@ -49,12 +49,6 @@ function Index() {
     const btn = document.getElementById("continue-btn") as HTMLButtonElement | null;
     if (!btn) return;
 
-    if (urls.isAndroid) {
-      btn.innerText = "Routing...";
-      setTimeout(() => {
-        window.location.href = urls.escapeUrl;
-      }, 100);
-    }
 
     const onClick = () => {
       btn.innerText = "Opening...";
@@ -69,7 +63,7 @@ function Index() {
             if (fb) fb.style.display = "block";
             btn.style.display = "none";
           }
-        }, 1500);
+        }, 1800);
       }, 100);
     };
 
