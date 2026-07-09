@@ -87,8 +87,7 @@ function Index() {
         inset: 0,
         width: "100vw",
         height: "100vh",
-        background:
-          "radial-gradient(ellipse at top, #1a1a1a 0%, #000000 60%)",
+        background: "radial-gradient(ellipse at top, #1a1a1a 0%, #000000 60%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -116,8 +115,7 @@ function Index() {
           width: "85%",
           maxWidth: "340px",
           borderRadius: "16px",
-          boxShadow:
-            "0 10px 30px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.06) inset",
+          boxShadow: "0 10px 30px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.06) inset",
           padding: "24px 20px 20px",
           display: "flex",
           flexDirection: "column",
@@ -153,20 +151,9 @@ function Index() {
               justifyContent: "center",
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width="26"
-              height="26"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26">
               <defs>
-                <linearGradient
-                  id="checkGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
+                <linearGradient id="checkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#feda75" />
                   <stop offset="25%" stopColor="#fa7e1e" />
                   <stop offset="50%" stopColor="#d62976" />
@@ -214,8 +201,7 @@ function Index() {
           id="continue-btn"
           style={{
             width: "100%",
-            background:
-              "linear-gradient(180deg, #0095F6 0%, #0084d8 100%)",
+            background: "linear-gradient(180deg, #0095F6 0%, #0084d8 100%)",
             color: "#FFFFFF",
             fontWeight: 600,
             fontSize: "15px",
@@ -258,8 +244,7 @@ function Index() {
             fontFamily: instagramFont,
           }}
         >
-          Action required: Tap ••• (top right) and select "Open in System
-          Browser".
+          Action required: Tap ••• (top right) and select "Open in System Browser".
         </div>
       </div>
     </div>

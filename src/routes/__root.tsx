@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -87,8 +88,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Link Verified" },
       { name: "twitter:description", content: "Link verification interstitial." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f3e5cd78-0474-4795-b859-0c57c87ebc1a/id-preview-ebd86387--22f64a21-df08-4e99-bcee-a34323fa1fda.lovable.app-1783629248906.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f3e5cd78-0474-4795-b859-0c57c87ebc1a/id-preview-ebd86387--22f64a21-df08-4e99-bcee-a34323fa1fda.lovable.app-1783629248906.png" },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f3e5cd78-0474-4795-b859-0c57c87ebc1a/id-preview-ebd86387--22f64a21-df08-4e99-bcee-a34323fa1fda.lovable.app-1783629248906.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f3e5cd78-0474-4795-b859-0c57c87ebc1a/id-preview-ebd86387--22f64a21-df08-4e99-bcee-a34323fa1fda.lovable.app-1783629248906.png",
+      },
     ],
     links: [
       {
@@ -113,6 +122,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );
